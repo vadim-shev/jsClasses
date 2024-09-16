@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Salon Poster</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="qr.js"></script>
+</head>
+<body style="display: flex; justify-content: center; align-items: center;">
+    <div class="poster" id="invoice" style="width: 1080px; height: 1080px;">
+        <div id="invoiceSize" style="width: 1080px; height: 1080px; display: flex; flex-direction: column; justify-content: center;">
+            <div class="poster-header">
+                <div class="salon-info">
+                    <h1>@mention<br>Выпрямление волос</h1>
+                </div>
+            </div>
+            <div class="poster-body">
+                <div class="services">
+                    <div class="service-category" id="service-input" data-service="keratin">
+                        <h2 id="service-ker">Кератин / Ботокс</h2>
+                        <ul id="list-keratin">
+                            <li><span>30 cм</span><span>1400 &#8372</span></li>
+                            <li><span>40 cм</span><span>1600 &#8372</span></li>
+                            <li><span>50 cм</span><span>1800 &#8372</span></li>
+                            <li><span>60 cм</span><span>2000 &#8372</span></li>
+                            <li><span>70 cм</span><span>2200 &#8372</span></li>
+                        </ul>
+                    </div>
+                    <div class="service-category" id="service-input" data-service="cold">
+                        <h2>Холодное восстановление</h2>
+                        <ul id="list-cold">
+                            <li><span>30 cм</span><span>1400 &#8372</span></li>
+                            <li><span>40 cм</span><span>1600 &#8372</span></li>
+                            <li><span>50 cм</span><span>1800 &#8372</span></li>
+                            <li><span>60 cм</span><span>2000 &#8372</span></li>
+                            <li><span>70 cм</span><span>2200 &#8372</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="services">
+                    <div class="service-category" id="service-input" data-service="maybe">
+                        <h2>Может потребоваться</h2>
+                        <ul id="list-maybe">
+                            <li><span>30 cм</span><span>400 &#8372</span></li>
+                            <li><span>30 cм</span><span>600 &#8372</span></li>
+                            <li><span>30 cм</span><span>900 &#8372</span></li>
+                        </ul>
+                    </div>
+                    <div class="service-category" id="service-input" data-service="spec">
+                        <h2>Дополнительные услуги</h2>
+                        <ul id="list-spec">
+                            <li><span>30 cм</span><span>900 &#8372</span></li>
+                            <li><span>30 cм</span><span>1000 &#8372</span></li>
+                            <li><span>30 cм</span><span>500 &#8372</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="offer-section">
+                    <h2>Working Hours</h2>
+                    <p>From Monday to Friday<br>10AM - 8 PM</p>
+                    <div id="QR">
+                    </div>
+                </div>
+            </div>
+            <div class="poster-footer">
+                <p>123 Street Name, City Name, 134</p>
+                <p>+1 234 567 890</p>
+            </div>
+        </div>
+    </div>
+    <button id="download">Download PDF</button>
+    <button id="download1">Download Image</button>
+
+    <button id="service-button">Send</button>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+<!-- <canvas></canvas> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>     -->
+
+    
+
+
+</body>
+</html>
