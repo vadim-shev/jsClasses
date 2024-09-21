@@ -1,90 +1,108 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hair Salon Poster</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
-    <script src="qr.js"></script>
-</head>
-<body style="display: flex; justify-content: center; align-items: center;">
-    <div class="poster" id="invoice" style="width: 1080px; height: 1080px;">
-        <div id="invoiceSize" style="width: 1080px; height: 1080px; display: flex; flex-direction: column; justify-content: center;">
-            <div class="poster-header">
-                <div class="salon-info">
-                    <h1>@mention<br>Выпрямление волос</h1>
-                </div>
-            </div>
-            <div class="poster-body">
-                <div class="services">
-                    <div class="service-category" id="service-input" data-service="keratin">
-                        <h2 id="service-ker">Кератин / Ботокс</h2>
-                        <ul id="list-keratin">
-                            <li><span>30 cм</span><span>1400 &#8372</span></li>
-                            <li><span>40 cм</span><span>1600 &#8372</span></li>
-                            <li><span>50 cм</span><span>1800 &#8372</span></li>
-                            <li><span>60 cм</span><span>2000 &#8372</span></li>
-                            <li><span>70 cм</span><span>2200 &#8372</span></li>
-                        </ul>
-                    </div>
-                    <div class="service-category" id="service-input" data-service="cold">
-                        <h2>Холодное восстановление</h2>
-                        <ul id="list-cold">
-                            <li><span>30 cм</span><span>1400 &#8372</span></li>
-                            <li><span>40 cм</span><span>1600 &#8372</span></li>
-                            <li><span>50 cм</span><span>1800 &#8372</span></li>
-                            <li><span>60 cм</span><span>2000 &#8372</span></li>
-                            <li><span>70 cм</span><span>2200 &#8372</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="services">
-                    <div class="service-category" id="service-input" data-service="maybe">
-                        <h2>Может потребоваться</h2>
-                        <ul id="list-maybe">
-                            <li><span>30 cм</span><span>400 &#8372</span></li>
-                            <li><span>30 cм</span><span>600 &#8372</span></li>
-                            <li><span>30 cм</span><span>900 &#8372</span></li>
-                        </ul>
-                    </div>
-                    <div class="service-category" id="service-input" data-service="spec">
-                        <h2>Дополнительные услуги</h2>
-                        <ul id="list-spec">
-                            <li><span>30 cм</span><span>900 &#8372</span></li>
-                            <li><span>30 cм</span><span>1000 &#8372</span></li>
-                            <li><span>30 cм</span><span>500 &#8372</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="offer-section">
-                    <h2>Working Hours</h2>
-                    <p>From Monday to Friday<br>10AM - 8 PM</p>
-                    <div id="QR">
-                    </div>
-                </div>
-            </div>
-            <div class="poster-footer">
-                <p>123 Street Name, City Name, 134</p>
-                <p>+1 234 567 890</p>
-            </div>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+        <script src="createButton.js"></script>
+        <script src="downloaderScript.js"></script>
+        <title>Hair Treatment Offer</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+    /*            background-color: black;*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .container {
+                position: relative;
+                width: 1080px;
+                height: 1080px;
+                background-color: black;
+                border: 2px solid white;
+                background: url('SS.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .label {
+                position: absolute;
+    /*            left: 50%;*/
+                padding: 20px 90px;
+                color: white;
+                font-size: 45px;
+                font-weight: bold;
+                width: fit-content;
+            }
+
+            .keratin {
+                top: 29%;
+                background-color: #e6e5e0;
+                color: #b73239;
+                transform: rotate(6deg);
+                 box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.8);
+
+                 font-weight: 700;
+            }
+
+            .extenso {
+                top: 40.5%;
+                background-color: #e6e5e0;
+                color: #b7915e;
+                transform: rotate(-2deg);
+                 box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.8);
+                              font-weight: 700;
+            }
+
+            .rebonding {
+                top: 50%;
+                background-color: #e6e5e0;
+                color: #e27ec8;
+                transform: rotate(1deg);
+                 box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.8);
+                 font-weight: 700;
+            }
+
+            .price {
+                top: 59.5%;
+                background-color: #ffcc00;
+                color: black;
+                transform: rotate(-1deg);
+                 box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.8);
+                 font-weight: 900;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="invoiceSize" style="width: 1080px; height: 1080px;">
+            <div class="label keratin">Кератин</div>
+            <div class="label extenso">Ботокс</div>
+            <div class="label rebonding">Восстановление</div>
+            <div class="label price">От 1200 грн</div>
         </div>
-    </div>
-    <button id="download">Download PDF</button>
-    <button id="download1">Download Image</button>
+   <!-- <div id="nestedListContainer"></div> Container for the nested list -->
+        <script >
+            // new ButtonManager(getElementByID, innerHTML)
+            // new ServiceManager(getElementByID)
 
-    <button id="service-button">Send</button>
+            // const buttonManager = new ButtonManager('download', 'Download')
+             const elementManager = new ElementManager("div", "nestedListContainer");
+        elementManager.create(); // Create the container div
+            const download = new ServiceManager('invoiceSize')
 
-    <script src="main.js"></script>
-</body>
-</html>
-
-<!-- <canvas></canvas> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>     -->
-
-    
-
-
-</body>
+            // elementManager.insertElement("sd")
+            elementManager.writeInText("<b>sdasdsaasd</b>sd")
+            elementManager.putInElement("vv")
+        </script>
+    </body>
 </html>
