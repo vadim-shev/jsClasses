@@ -4,13 +4,13 @@
 ## Проверка на уникальность идентификатора
 - X.create(тэг элемента);
 ## Добавить классы
-- X.addCSSClass("класс/классы"); 
+- X.addCSSClass(className); 
 ## Удалить классы
-- X.removeCSSClass("класс/классы")
+- X.removeCSSClass("className")
 ## Добавить/создать элемент перед элементом с которым мы работаем
-- X.insertElementBefore("класс/классы")
+- X.insertElementBefore("className")
 ## Добавить/создать элемент внутри элемента с которым мы работаем
-- X.putInElement("класс/классы")
+- X.putInElement("className")
 ## Написать текст внутри элемента с которым мы работаем
-- X.writeInText("класс/классы")
+- X.writeInText("className")
 
