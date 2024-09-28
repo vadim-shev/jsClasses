@@ -1,5 +1,3 @@
-https://www.instagram.com/direct/t/vadimshev_/?text=xcz
-const download = new ServiceManager('invoiceSize')
 
 // ElementManager //
 const переменная = new ElementManager(Уникальный идентификатор);
@@ -18,6 +16,3 @@ const переменная = new ElementManager(Уникальный идент�
 // Написать текст внутри элемента с которым мы работаем
 переменная.writeInText("класс/классы")
 
-// createEle
-const Json = new FetchManager('users.json')
-Json.Parse()
