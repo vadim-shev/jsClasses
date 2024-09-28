@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
         <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
-        <script src="createButton.js"></script>
         <script src="downloaderScript.js"></script>
+        <script src="elementManager.js"></script>
+        <script src="FetchManager.js"></script>
         <title>Hair Treatment Offer</title>
         <style>
             body {
                 margin: 0;
                 padding: 0;
                 font-family: Arial, sans-serif;
-    /*            background-color: black;*/
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -37,7 +37,6 @@
 
             .label {
                 position: absolute;
-    /*            left: 50%;*/
                 padding: 20px 90px;
                 color: white;
                 font-size: 45px;
@@ -90,19 +89,23 @@
             <div class="label rebonding">Восстановление</div>
             <div class="label price">От 1200 грн</div>
         </div>
-   <!-- <div id="nestedListContainer"></div> Container for the nested list -->
+     <button id="nestedListContainer"></button> 
+
         <script >
-            // new ButtonManager(getElementByID, innerHTML)
-            // new ServiceManager(getElementByID)
+            
 
             // const buttonManager = new ButtonManager('download', 'Download')
-             const elementManager = new ElementManager("div", "nestedListContainer");
-        elementManager.create(); // Create the container div
             const download = new ServiceManager('invoiceSize')
+             const eementManagers = new ElementManager("nestedListContainer");
+        eementManagers.create(); // Create the container div
+        eementManagers.removeCSSClass("sd asd"); // Create the container div
+        eementManagers.addCSSClass("sd asd"); // Create the container div
 
             // elementManager.insertElement("sd")
-            elementManager.writeInText("<b>sdasdsaasd</b>sd")
-            elementManager.putInElement("vv")
+            eementManagers.writeInText("<b>sdasdsaasd</b>sd")
+            // createEle
+            const Json = new FetchManager('users.json')
+            Json.Parse()
         </script>
     </body>
 </html>
